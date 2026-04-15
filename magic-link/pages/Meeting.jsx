@@ -1,8 +1,8 @@
-import React, {Fragment, useContext, useEffect, useState} from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
 import MeetingContext from "../contexts/MeetingContext";
 import MeetingTabs from "../components/meetings/MeetingTabs";
 import Card from "../components/layout/cards/Card";
-import {TabPanel, TabsContent} from "react-foundation";
+import { TabPanel, TabsContent } from "react-foundation";
 import AppContext from "../contexts/AppContext";
 import CardHeading from "../components/layout/cards/CardHeading";
 import CardSection from "../components/layout/cards/CardSection";
@@ -11,7 +11,7 @@ import FieldGroup from "../components/forms/FieldGroup";
 import TextAreaField from "../components/forms/TextAreaField";
 import RepeatingField from "../components/forms/RepeatingField";
 import ApplicationLayout from "../layouts/ApplicationLayout";
-import {saveMeeting} from "../src/api";
+import { saveMeeting } from "../src/api";
 
 /**
  * THe view page
@@ -19,8 +19,8 @@ import {saveMeeting} from "../src/api";
  * @constructor
  */
 const MeetingPage = () => {
-    const {translations} = useContext(AppContext)
-    const {meeting, tab, tabs, submission} = useContext(MeetingContext)
+    const { translations } = useContext(AppContext)
+    const { meeting, tab, tabs, submission } = useContext(MeetingContext)
 
     if (!meeting || !submission) {
         return null
@@ -28,21 +28,21 @@ const MeetingPage = () => {
 
     return (
         <ApplicationLayout title={meeting.name}
-                           titleIcon="fi-pencil"
-                           titleTo={`/meetings/edit/${meeting.ID}`}
-                           iconLabel={translations.edit}
-                           breadcrumbs={[
-                                {
-                                    link: '/',
-                                    label: 'Dashboard'
-                                }
-                            ]}>
+            titleIcon="fi-pencil"
+            titleTo={`/meetings/edit/${meeting.ID}`}
+            iconLabel={translations.edit}
+            breadcrumbs={[
+                {
+                    link: '/',
+                    label: 'Dashboard'
+                }
+            ]}>
             <Form
                 initialValues={{
                     ...submission
                 }}
             >
-                {({values, isSubmitting, setFieldValue, setTouched, ...attrs}) => {
+                {({ values, isSubmitting, setFieldValue, setTouched, ...attrs }) => {
 
 
                     const handleBlur = async () => {
@@ -57,9 +57,9 @@ const MeetingPage = () => {
                     }
 
                     return <Fragment>
-                        <MeetingTabs tabs={["LOOKING_BACK", "LOOKING_UP", "LOOKING_AHEAD"]}/>
+                        <MeetingTabs tabs={["LOOKING_BACK", "LOOKING_UP", "LOOKING_AHEAD"]} />
                         <main>
-                            <div className={"container"}>
+                            <div className="container hidden">
                                 <TabsContent>
                                     <TabPanel isActive={tab.key === "LOOKING_BACK"}>
                                         <Card show={!!meeting.three_thirds_looking_back_content}>
@@ -72,7 +72,7 @@ const MeetingPage = () => {
                                         </Card>
 
                                         {meeting.previous_meeting
-                                        && (meeting.previous_meeting?.three_thirds_looking_ahead_prayer_topics || meeting.previous_meeting?.three_thirds_looking_ahead_applications) ? <Card>
+                                            && (meeting.previous_meeting?.three_thirds_looking_ahead_prayer_topics || meeting.previous_meeting?.three_thirds_looking_ahead_applications) ? <Card>
                                             <CardHeading>
                                                 <div>
                                                     <strong>{translations.previous_meeting}:</strong>
@@ -140,10 +140,10 @@ const MeetingPage = () => {
                                             <CardSection>
                                                 <h3>{translations.notes}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={"Notes go here"}
-                                                            name={`three_thirds_looking_back_notes`}
-                                                            rows={3}
-                                                            onBlur={handleBlur}
+                                                    placeholder={"Notes go here"}
+                                                    name={`three_thirds_looking_back_notes`}
+                                                    rows={3}
+                                                    onBlur={handleBlur}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -154,7 +154,7 @@ const MeetingPage = () => {
                                             {values.three_thirds_looking_up_topic ? <CardHeading>
                                                 <h2>{values.three_thirds_looking_up_topic}</h2>
                                             </CardHeading> : null}
-                                            {values.three_thirds_looking_up_content ?  <CardSection>
+                                            {values.three_thirds_looking_up_content ? <CardSection>
                                                 {values.three_thirds_looking_up_content}
                                             </CardSection> : null}
 
@@ -194,10 +194,10 @@ const MeetingPage = () => {
                                             <CardSection>
                                                 <h3>{translations.notes}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.notes_label}
-                                                            name={`three_thirds_looking_up_notes`}
-                                                            rows={3}
-                                                            onBlur={handleBlur}
+                                                    placeholder={translations.notes_label}
+                                                    name={`three_thirds_looking_up_notes`}
+                                                    rows={3}
+                                                    onBlur={handleBlur}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -247,10 +247,10 @@ const MeetingPage = () => {
                                             <CardSection>
                                                 <h3>{translations.prayer_requests}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.prayer_requests_label}
-                                                            name={`three_thirds_looking_ahead_prayer_topics`}
-                                                            rows={3}
-                                                            onBlur={handleBlur}
+                                                    placeholder={translations.prayer_requests_label}
+                                                    name={`three_thirds_looking_ahead_prayer_topics`}
+                                                    rows={3}
+                                                    onBlur={handleBlur}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -259,10 +259,10 @@ const MeetingPage = () => {
                                             <CardSection>
                                                 <h3>{translations.notes}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.notes_label}
-                                                            name={`three_thirds_looking_ahead_notes`}
-                                                            rows={3}
-                                                            onBlur={handleBlur}
+                                                    placeholder={translations.notes_label}
+                                                    name={`three_thirds_looking_ahead_notes`}
+                                                    rows={3}
+                                                    onBlur={handleBlur}
                                                 />
                                             </CardSection>
                                         </Card>
