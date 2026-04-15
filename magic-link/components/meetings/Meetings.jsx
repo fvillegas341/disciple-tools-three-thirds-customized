@@ -1,7 +1,7 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
-import {Button, ButtonGroup, Colors} from "react-foundation";
-import React, {useContext} from "react";
+import { Button, ButtonGroup, Colors } from "react-foundation";
+import React, { useContext } from "react";
 import Form from "../forms/Form";
 import FieldGroup from "../forms/FieldGroup";
 import AppContext from "../../contexts/AppContext";
@@ -53,7 +53,7 @@ const Meetings = () => {
                     q: ''
                 }}
             >
-                <MeetingsFilterObserver/>
+                <MeetingsFilterObserver />
                 <div className="grid-x grid-margin-x align-middle">
                     <div className="cell small-6">
                         <FieldGroup
@@ -65,13 +65,13 @@ const Meetings = () => {
                     </div>
                     <div className="cell small-6">
                         <FieldGroup as="select"
-                                    name="filter"
-                                    options={[
-                                        {value: '', label: magicLink.translations.all},
-                                        {value: 'NO_GROUP', label: magicLink.translations.no_group},
-                                        ...groups.map(group => ({value: group.ID, label: group.title})),
-                                    ]}
-                                    component={SelectField}
+                            name="filter"
+                            options={[
+                                { value: '', label: magicLink.translations.all },
+                                { value: 'NO_GROUP', label: magicLink.translations.no_group },
+                                ...groups.map(group => ({ value: group.ID, label: group.title })),
+                            ]}
+                            component={SelectField}
                         />
                     </div>
                 </div>
@@ -79,8 +79,8 @@ const Meetings = () => {
             <div className={"row"}>
                 <div className={"columns"}>
                     {meta.total ? <Alert theme={"success"}
-                                         size="small"
-                                         className={"font-italic margin-top-1"}>{meta.total} {meta.total > 1 ? magicLink.translations.meetings_found : magicLink.translations.meeting_found}.</Alert> : ''}
+                        size="small"
+                        className={"font-italic margin-top-1"}>{meta.total} {meta.total > 1 ? magicLink.translations.meetings_found : magicLink.translations.meeting_found}.</Alert> : ''}
                 </div>
             </div>
 
@@ -89,18 +89,21 @@ const Meetings = () => {
                     <Link
                         key={`menu-meeting-${meeting["ID"]}`}
                         to={{
-                            pathname: "/meetings/" + meeting["ID"]
+                            // change the meeting pathname to the edit screen for the meeting instead 
+                            // of the default view screen
+                            // to change it back to the default view screen, change it to "/meetings/" + meeting["ID"]
+                            pathname: "/meetings/edit/" + meeting["ID"]
                         }}
                     >
                         <div className={classNames(
                             "menu__item menu__item--border-left",
-                            location.pathname === "/meetings/" + meeting["ID"] ? 'menu__item--active' : false
+                            location.pathname === "/meetings/edit/" + meeting["ID"] ? 'menu__item--active' : false
                         )}>
                             <strong className={"menu__item-title"}>
                                 {meeting.name}
                             </strong>
                             {
-                                (meeting.date) ?  <div className={"menu__item-date"}>
+                                (meeting.date) ? <div className={"menu__item-date"}>
                                     {meeting.date.formatted}
                                 </div> : ''
                             }
@@ -111,8 +114,8 @@ const Meetings = () => {
 
             {meta.total > meetings.length ? <ButtonGroup isExpanded>
                 <Button onClick={loadMore}
-                        color={Colors.SUCCESS}
-                        className={'shadow'}> {magicLink.translations.load_more} </Button>
+                    color={Colors.SUCCESS}
+                    className={'shadow'}> {magicLink.translations.load_more} </Button>
             </ButtonGroup> : ''}
 
         </div>
