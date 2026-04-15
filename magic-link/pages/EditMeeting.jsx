@@ -29,6 +29,9 @@ const EditMeetingPage = () => {
     const { meetings } = useContext(MeetingsContext)
     const { meeting, tab, submission } = useContext(MeetingContext)
     const alert = useAlert()
+    const hideLookingBack = true;
+    const hideLookingUp = true;
+    const hideLookingAhead = true;
 
     if (!meeting || !submission) {
         return null
@@ -137,191 +140,197 @@ const EditMeetingPage = () => {
                                         </Card>
 
                                     </TabPanel>
-                                    <TabPanel className="hidden" isActive={tab.key === 'LOOKING_BACK'}>
-                                        <Card>
-                                            <CardHeading>
-                                                <h2>{translations.description}</h2>
-                                            </CardHeading>
-                                            <CardSection>
-                                                <FieldGroup
-                                                    as={TextAreaField}
-                                                    name="three_thirds_looking_back_content"
-                                                    placeholder={translations.description}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
-
-                                        <Card>
-                                            <CardSection>
-                                                <h3>{translations.number_shared_label}</h3>
-                                                <div className={"grid-x grid-margin-x align-middle"}>
-                                                    <div className="cell small-6">
-                                                        <FieldGroup
-                                                            type="number"
-                                                            name="three_thirds_looking_back_number_shared"
-                                                            placeholder={"0"}
-                                                            onBlur={save}
-                                                        />
-                                                    </div>
-                                                    <div className="cell small-6">
-                                                        <label>
-                                                            {translations.people}
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </CardSection>
-                                        </Card>
-
-                                        <Card>
-                                            <CardSection>
-                                                <h3 className={"text-center"}>{translations.accepted_christ_label}</h3>
-                                                <div>
-                                                    <RepeatingField
-                                                        name={'three_thirds_looking_back_new_believers'}
-                                                        placeholder={"Name"}
+                                    {!hideLookingBack && (
+                                        <TabPanel className="hidden" isActive={tab.key === 'LOOKING_BACK'}>
+                                            <Card>
+                                                <CardHeading>
+                                                    <h2>{translations.description}</h2>
+                                                </CardHeading>
+                                                <CardSection>
+                                                    <FieldGroup
+                                                        as={TextAreaField}
+                                                        name="three_thirds_looking_back_content"
+                                                        placeholder={translations.description}
+                                                        rows={3}
                                                         onBlur={save}
                                                     />
-                                                </div>
-                                            </CardSection>
-                                        </Card>
-                                        <Card>
-                                            <CardSection>
-                                                <h3>{translations.notes}</h3>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder={"Notes go here"}
-                                                    name={`three_thirds_looking_back_notes`}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
+                                                </CardSection>
+                                            </Card>
 
-                                    </TabPanel>
-                                    <TabPanel className="hidden" isActive={tab.key === 'LOOKING_UP'}>
-                                        <Card>
-                                            <CardHeading>
-                                                <h2>{translations.topic}</h2>
-                                            </CardHeading>
-                                            <CardSection>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder={translations.topic}
-                                                    name={`three_thirds_looking_up_topic`}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
+                                            <Card>
+                                                <CardSection>
+                                                    <h3>{translations.number_shared_label}</h3>
+                                                    <div className={"grid-x grid-margin-x align-middle"}>
+                                                        <div className="cell small-6">
+                                                            <FieldGroup
+                                                                type="number"
+                                                                name="three_thirds_looking_back_number_shared"
+                                                                placeholder={"0"}
+                                                                onBlur={save}
+                                                            />
+                                                        </div>
+                                                        <div className="cell small-6">
+                                                            <label>
+                                                                {translations.people}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </CardSection>
+                                            </Card>
 
-                                        <Card>
-                                            <CardSection>
-                                                <h3>{translations.number_present_label}</h3>
-                                                <div className={"grid-x grid-margin-x align-middle"}>
-                                                    <div className="cell small-6">
-                                                        <FieldGroup
-                                                            type="number"
-                                                            name="three_thirds_looking_up_number_attendees"
-                                                            placeholder={"0"}
+                                            <Card>
+                                                <CardSection>
+                                                    <h3 className={"text-center"}>{translations.accepted_christ_label}</h3>
+                                                    <div>
+                                                        <RepeatingField
+                                                            name={'three_thirds_looking_back_new_believers'}
+                                                            placeholder={"Name"}
                                                             onBlur={save}
                                                         />
                                                     </div>
-                                                    <div className="cell small-6">
-                                                        <label>
-                                                            {translations.people}
-                                                        </label>
+                                                </CardSection>
+                                            </Card>
+                                            <Card>
+                                                <CardSection>
+                                                    <h3>{translations.notes}</h3>
+                                                    <FieldGroup as={TextAreaField}
+                                                        placeholder={"Notes go here"}
+                                                        name={`three_thirds_looking_back_notes`}
+                                                        rows={3}
+                                                        onBlur={save}
+                                                    />
+                                                </CardSection>
+                                            </Card>
+                                        </TabPanel>
+                                    )}
+
+                                    {!hideLookingUp && (
+                                        <TabPanel className="hidden" isActive={tab.key === 'LOOKING_UP'}>
+                                            <Card>
+                                                <CardHeading>
+                                                    <h2>{translations.topic}</h2>
+                                                </CardHeading>
+                                                <CardSection>
+                                                    <FieldGroup as={TextAreaField}
+                                                        placeholder={translations.topic}
+                                                        name={`three_thirds_looking_up_topic`}
+                                                        rows={3}
+                                                        onBlur={save}
+                                                    />
+                                                </CardSection>
+                                            </Card>
+
+                                            <Card>
+                                                <CardSection>
+                                                    <h3>{translations.number_present_label}</h3>
+                                                    <div className={"grid-x grid-margin-x align-middle"}>
+                                                        <div className="cell small-6">
+                                                            <FieldGroup
+                                                                type="number"
+                                                                name="three_thirds_looking_up_number_attendees"
+                                                                placeholder={"0"}
+                                                                onBlur={save}
+                                                            />
+                                                        </div>
+                                                        <div className="cell small-6">
+                                                            <label>
+                                                                {translations.people}
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </CardSection>
-                                        </Card>
+                                                </CardSection>
+                                            </Card>
 
-                                        <Card>
-                                            <CardSection>
-                                                <h3>{translations.notes}</h3>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder={translations.notes_label}
-                                                    name={`three_thirds_looking_up_notes`}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
-                                    </TabPanel>
+                                            <Card>
+                                                <CardSection>
+                                                    <h3>{translations.notes}</h3>
+                                                    <FieldGroup as={TextAreaField}
+                                                        placeholder={translations.notes_label}
+                                                        name={`three_thirds_looking_up_notes`}
+                                                        rows={3}
+                                                        onBlur={save}
+                                                    />
+                                                </CardSection>
+                                            </Card>
+                                        </TabPanel>
+                                    )}
 
-                                    <TabPanel className="hidden" isActive={tab.key === 'LOOKING_AHEAD'}>
-                                        <Card className="hidden">
-                                            <CardHeading>
-                                                <h2>{translations.description}</h2>
-                                            </CardHeading>
-                                            <CardSection>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder={translations.notes_label}
-                                                    name={`three_thirds_looking_ahead_content`}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
+                                    {!hideLookingAhead && (
+                                        <TabPanel className="hidden" isActive={tab.key === 'LOOKING_AHEAD'}>
+                                            <Card>
+                                                <CardHeading>
+                                                    <h2>{translations.description}</h2>
+                                                </CardHeading>
+                                                <CardSection>
+                                                    <FieldGroup as={TextAreaField}
+                                                        placeholder={translations.notes_label}
+                                                        name={`three_thirds_looking_ahead_content`}
+                                                        rows={3}
+                                                        onBlur={save}
+                                                    />
+                                                </CardSection>
+                                            </Card>
 
-                                        <Card>
-                                            <CardHeading>
-                                                <h2>{translations.application}</h2>
-                                            </CardHeading>
-                                            <CardSection>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder={translations.application}
-                                                    name={`three_thirds_looking_ahead_applications`}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
+                                            <Card>
+                                                <CardHeading>
+                                                    <h2>{translations.application}</h2>
+                                                </CardHeading>
+                                                <CardSection>
+                                                    <FieldGroup as={TextAreaField}
+                                                        placeholder={translations.application}
+                                                        name={`three_thirds_looking_ahead_applications`}
+                                                        rows={3}
+                                                        onBlur={save}
+                                                    />
+                                                </CardSection>
+                                            </Card>
 
-                                        <Card>
-                                            <CardSection>
-                                                <h3>{translations.share_goal_label}</h3>
-                                                <div className={"grid-x grid-margin-x align-middle"}>
-                                                    <div className="cell small-6">
-                                                        <FieldGroup
-                                                            type="number"
-                                                            name="three_thirds_looking_ahead_share_goal"
-                                                            placeholder={"0"}
-                                                            onBlur={save}
-                                                        />
+                                            <Card>
+                                                <CardSection>
+                                                    <h3>{translations.share_goal_label}</h3>
+                                                    <div className={"grid-x grid-margin-x align-middle"}>
+                                                        <div className="cell small-6">
+                                                            <FieldGroup
+                                                                type="number"
+                                                                name="three_thirds_looking_ahead_share_goal"
+                                                                placeholder={"0"}
+                                                                onBlur={save}
+                                                            />
+                                                        </div>
+                                                        <div className="cell small-6">
+                                                            <label>
+                                                                {translations.people}
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div className="cell small-6">
-                                                        <label>
-                                                            {translations.people}
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </CardSection>
-                                        </Card>
+                                                </CardSection>
+                                            </Card>
 
-                                        <Card>
-                                            <CardSection>
-                                                <h3>{translations.prayer_requests}</h3>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder={translations.prayer_requests_label}
-                                                    name={`three_thirds_looking_ahead_prayer_topics`}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
+                                            <Card>
+                                                <CardSection>
+                                                    <h3>{translations.prayer_requests}</h3>
+                                                    <FieldGroup as={TextAreaField}
+                                                        placeholder={translations.prayer_requests_label}
+                                                        name={`three_thirds_looking_ahead_prayer_topics`}
+                                                        rows={3}
+                                                        onBlur={save}
+                                                    />
+                                                </CardSection>
+                                            </Card>
 
-                                        <Card>
-                                            <CardSection>
-                                                <h3>{translations.notes}</h3>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder={translations.notes_label}
-                                                    name={`three_thirds_looking_ahead_notes`}
-                                                    rows={3}
-                                                    onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
-                                    </TabPanel>
+                                            <Card>
+                                                <CardSection>
+                                                    <h3>{translations.notes}</h3>
+                                                    <FieldGroup as={TextAreaField}
+                                                        placeholder={translations.notes_label}
+                                                        name={`three_thirds_looking_ahead_notes`}
+                                                        rows={3}
+                                                        onBlur={save}
+                                                    />
+                                                </CardSection>
+                                            </Card>
+                                        </TabPanel>
+                                    )}
                                 </TabsContent>
                             </div>
                         </main>
