@@ -137,7 +137,7 @@ const EditMeetingPage = () => {
                                         </Card>
 
                                     </TabPanel>
-                                    <TabPanel isActive={tab.key === 'LOOKING_BACK'}>
+                                    <TabPanel className={"hidden"} isActive={tab.key === 'LOOKING_BACK'}>
                                         <Card>
                                             <CardHeading>
                                                 <h2>{translations.description}</h2>
