@@ -137,7 +137,7 @@ const EditMeetingPage = () => {
                                         </Card>
 
                                     </TabPanel>
-                                    <TabPanel className={"hidden"} isActive={tab.key === 'LOOKING_BACK'}>
+                                    <TabPanel className="hidden" isActive={tab.key === 'LOOKING_BACK'}>
                                         <Card>
                                             <CardHeading>
                                                 <h2>{translations.description}</h2>
@@ -199,7 +199,7 @@ const EditMeetingPage = () => {
                                         </Card>
 
                                     </TabPanel>
-                                    <TabPanel isActive={tab.key === 'LOOKING_UP'}>
+                                    <TabPanel className="hidden" isActive={tab.key === 'LOOKING_UP'}>
                                         <Card>
                                             <CardHeading>
                                                 <h2>{translations.topic}</h2>
@@ -248,7 +248,7 @@ const EditMeetingPage = () => {
                                         </Card>
                                     </TabPanel>
 
-                                    <TabPanel isActive={tab.key === 'LOOKING_AHEAD'}>
+                                    <TabPanel className="hidden" isActive={tab.key === 'LOOKING_AHEAD'}>
                                         <Card>
                                             <CardHeading>
                                                 <h2>{translations.description}</h2>
