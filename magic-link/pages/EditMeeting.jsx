@@ -249,7 +249,7 @@ const EditMeetingPage = () => {
                                     </TabPanel>
 
                                     <TabPanel className="hidden" isActive={tab.key === 'LOOKING_AHEAD'}>
-                                        <Card>
+                                        <Card className="hidden">
                                             <CardHeading>
                                                 <h2>{translations.description}</h2>
                                             </CardHeading>
