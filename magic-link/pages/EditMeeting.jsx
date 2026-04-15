@@ -1,8 +1,8 @@
-import React, {Fragment, useCallback, useContext, useEffect, useState} from 'react'
+import React, { Fragment, useCallback, useContext, useEffect, useState } from 'react'
 import MeetingContext from "../contexts/MeetingContext";
 import MeetingTabs from "../components/meetings/MeetingTabs";
 import Card from "../components/layout/cards/Card";
-import {TabPanel, TabsContent} from "react-foundation";
+import { TabPanel, TabsContent } from "react-foundation";
 import AppContext from "../contexts/AppContext";
 import CardHeading from "../components/layout/cards/CardHeading";
 import CardSection from "../components/layout/cards/CardSection";
@@ -11,7 +11,7 @@ import FieldGroup from "../components/forms/FieldGroup";
 import TextAreaField from "../components/forms/TextAreaField";
 import RepeatingField from "../components/forms/RepeatingField";
 import ApplicationLayout from "../layouts/ApplicationLayout";
-import {saveMeeting, searchGroups, searchMeetings} from "../src/api";
+import { saveMeeting, searchGroups, searchMeetings } from "../src/api";
 import RelationshipField from "../components/forms/RelationshipField";
 import CreatableRelationshipField from "../components/forms/CreatableRelationshipField";
 import MeetingsContext from "../contexts/MeetingsContext";
@@ -25,9 +25,9 @@ import DateField from '../components/forms/DateField'
  * @constructor
  */
 const EditMeetingPage = () => {
-    const {translations} = useContext(AppContext)
-    const {meetings} = useContext(MeetingsContext)
-    const {meeting, tab, submission} = useContext(MeetingContext)
+    const { translations } = useContext(AppContext)
+    const { meetings } = useContext(MeetingsContext)
+    const { meeting, tab, submission } = useContext(MeetingContext)
     const alert = useAlert()
 
     if (!meeting || !submission) {
@@ -36,22 +36,22 @@ const EditMeetingPage = () => {
 
     return (
         <ApplicationLayout title={translations.edit + ": " + meeting.name}
-                           breadcrumbs={[
-                               {
-                                   link: '/',
-                                   label: 'Dashboard'
-                               },
-                               {
-                                   link: '/meetings/' + meeting.ID,
-                                   label: meeting.name
-                               }
-                           ]}>
+            breadcrumbs={[
+                {
+                    link: '/',
+                    label: 'Dashboard'
+                },
+                {
+                    link: '/meetings/' + meeting.ID,
+                    label: meeting.name
+                }
+            ]}>
             <Form
                 initialValues={{
                     ...submission
                 }}
             >
-                {({values, isSubmitting, setFieldValue, setTouched, ...attrs}) => {
+                {({ values, isSubmitting, setFieldValue, setTouched, ...attrs }) => {
                     const save = useCallback(async () => {
                         try {
                             await saveMeeting(Object.assign(meeting, values))
@@ -67,25 +67,39 @@ const EditMeetingPage = () => {
                     }, [values])
 
                     return <Fragment>
-                        <MeetingTabs/>
+                        <MeetingTabs />
                         <main>
                             <div className={"container"}>
                                 <TabsContent>
                                     <TabPanel isActive={tab.key === 'DETAILS'}>
                                         <Card>
                                             <CardHeading>
-                                                <h2>{translations.meeting}</h2>
+                                                <h2>{translations.group}</h2>
+                                            </CardHeading>
+                                            <CardSection>
+                                                <FieldGroup name="groups"
+                                                    request={searchGroups}
+                                                    defaultValue={meeting.groups?.posts}
+                                                    component={CreatableRelationshipField}
+                                                    isMulti
+                                                    onChange={save}
+                                                />
+                                            </CardSection>
+                                        </Card>
+                                        <Card>
+                                            <CardHeading>
+                                                <h2>Lesson/{translations.meeting}</h2>
                                             </CardHeading>
                                             <CardSection>
                                                 <FieldGroup
-                                                    label={translations.name}
+                                                    label="Lesson Title"
                                                     type={"text"}
                                                     name="name"
                                                     placeholder={translations.name}
                                                     onBlur={save}
                                                 />
                                                 <FieldGroup
-                                                    label={translations.date}
+                                                    label="Date of Meeting"
                                                     name="date"
                                                     placeholder={translations.date}
                                                     component={DateField}
@@ -93,34 +107,31 @@ const EditMeetingPage = () => {
                                                 />
                                             </CardSection>
                                         </Card>
-
                                         <Card>
                                             <CardHeading>
-                                                <h2>{translations.group}</h2>
+                                                <h2>Member Attendance</h2>
                                             </CardHeading>
                                             <CardSection>
-                                                <FieldGroup name="groups"
-                                                            request={searchGroups}
-                                                            defaultValue={meeting.groups?.posts}
-                                                            component={CreatableRelationshipField}
-                                                            isMulti
-                                                            onChange={save}
+                                                <FieldGroup as={TextAreaField}
+                                                    placeholder={translations.practice}
+                                                    name={`three_thirds_looking_up_practice`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
-
                                         <Card>
                                             <CardHeading>
                                                 <h2>{translations.previous_meeting}</h2>
                                             </CardHeading>
                                             <CardSection>
                                                 <FieldGroup name="three_thirds_previous_meetings"
-                                                            excludeOptions={[meeting.ID]}
-                                                            request={searchMeetings}
-                                                            defaultValue={meeting.three_thirds_previous_meetings?.posts}
-                                                            component={RelationshipField}
-                                                            isMulti
-                                                            onChange={save}
+                                                    excludeOptions={[meeting.ID]}
+                                                    request={searchMeetings}
+                                                    defaultValue={meeting.three_thirds_previous_meetings?.posts}
+                                                    component={RelationshipField}
+                                                    isMulti
+                                                    onChange={save}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -179,10 +190,10 @@ const EditMeetingPage = () => {
                                             <CardSection>
                                                 <h3>{translations.notes}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={"Notes go here"}
-                                                            name={`three_thirds_looking_back_notes`}
-                                                            rows={3}
-                                                            onBlur={save}
+                                                    placeholder={"Notes go here"}
+                                                    name={`three_thirds_looking_back_notes`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -195,10 +206,10 @@ const EditMeetingPage = () => {
                                             </CardHeading>
                                             <CardSection>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.topic}
-                                                            name={`three_thirds_looking_up_topic`}
-                                                            rows={3}
-                                                            onBlur={save}
+                                                    placeholder={translations.topic}
+                                                    name={`three_thirds_looking_up_topic`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -225,27 +236,13 @@ const EditMeetingPage = () => {
                                         </Card>
 
                                         <Card>
-                                            <CardHeading>
-                                                <h2>{translations.practice}</h2>
-                                            </CardHeading>
-                                            <CardSection>
-                                                <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.practice}
-                                                            name={`three_thirds_looking_up_practice`}
-                                                            rows={3}
-                                                            onBlur={save}
-                                                />
-                                            </CardSection>
-                                        </Card>
-
-                                        <Card>
                                             <CardSection>
                                                 <h3>{translations.notes}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.notes_label}
-                                                            name={`three_thirds_looking_up_notes`}
-                                                            rows={3}
-                                                            onBlur={save}
+                                                    placeholder={translations.notes_label}
+                                                    name={`three_thirds_looking_up_notes`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -258,10 +255,10 @@ const EditMeetingPage = () => {
                                             </CardHeading>
                                             <CardSection>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.notes_label}
-                                                            name={`three_thirds_looking_ahead_content`}
-                                                            rows={3}
-                                                            onBlur={save}
+                                                    placeholder={translations.notes_label}
+                                                    name={`three_thirds_looking_ahead_content`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -272,10 +269,10 @@ const EditMeetingPage = () => {
                                             </CardHeading>
                                             <CardSection>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.application}
-                                                            name={`three_thirds_looking_ahead_applications`}
-                                                            rows={3}
-                                                            onBlur={save}
+                                                    placeholder={translations.application}
+                                                    name={`three_thirds_looking_ahead_applications`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -305,10 +302,10 @@ const EditMeetingPage = () => {
                                             <CardSection>
                                                 <h3>{translations.prayer_requests}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.prayer_requests_label}
-                                                            name={`three_thirds_looking_ahead_prayer_topics`}
-                                                            rows={3}
-                                                            onBlur={save}
+                                                    placeholder={translations.prayer_requests_label}
+                                                    name={`three_thirds_looking_ahead_prayer_topics`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
@@ -317,10 +314,10 @@ const EditMeetingPage = () => {
                                             <CardSection>
                                                 <h3>{translations.notes}</h3>
                                                 <FieldGroup as={TextAreaField}
-                                                            placeholder={translations.notes_label}
-                                                            name={`three_thirds_looking_ahead_notes`}
-                                                            rows={3}
-                                                            onBlur={save}
+                                                    placeholder={translations.notes_label}
+                                                    name={`three_thirds_looking_ahead_notes`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>
