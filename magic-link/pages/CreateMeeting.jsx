@@ -61,11 +61,11 @@ const CreateMeetingPage = () => {
                             <div className={"container"}>
                                 <Card>
                                     <CardHeading>
-                                        <h2>"Lesson/" + {translations.meeting}</h2>
+                                        <h2>Needed Details</h2>
                                     </CardHeading>
                                     <CardSection>
                                         <FieldGroup
-                                            label="DNG Name"
+                                            label="DNG Group Name"
                                             name="groups"
                                             request={searchGroups}
                                             defaultValue={meeting.groups?.posts}
@@ -73,13 +73,13 @@ const CreateMeetingPage = () => {
                                             isMulti
                                         />
                                         <FieldGroup
-                                            label={translations.name}
+                                            label="Lesson Title"
                                             type={"text"}
                                             name="name"
                                             placeholder={translations.name}
                                         />
                                         <FieldGroup
-                                            label={translations.date}
+                                            label="Date of Meeting"
                                             name="date"
                                             placeholder={translations.date}
                                             component={DateField}
