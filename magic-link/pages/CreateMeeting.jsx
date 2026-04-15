@@ -61,9 +61,17 @@ const CreateMeetingPage = () => {
                             <div className={"container"}>
                                 <Card>
                                     <CardHeading>
-                                        <h2>{translations.meeting}</h2>
+                                        <h2>"Lesson/" + {translations.meeting}</h2>
                                     </CardHeading>
                                     <CardSection>
+                                        <FieldGroup
+                                            label="DNG Name"
+                                            name="groups"
+                                            request={searchGroups}
+                                            defaultValue={meeting.groups?.posts}
+                                            component={CreatableRelationshipField}
+                                            isMulti
+                                        />
                                         <FieldGroup
                                             label={translations.name}
                                             type={"text"}
@@ -76,12 +84,7 @@ const CreateMeetingPage = () => {
                                             placeholder={translations.date}
                                             component={DateField}
                                         />
-                                        <FieldGroup name="groups"
-                                            request={searchGroups}
-                                            defaultValue={meeting.groups?.posts}
-                                            component={CreatableRelationshipField}
-                                            isMulti
-                                        />
+
                                     </CardSection>
                                     <CardFooter>
                                         <ButtonGroup>
