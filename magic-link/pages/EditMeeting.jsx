@@ -113,7 +113,7 @@ const EditMeetingPage = () => {
                                             </CardHeading>
                                             <CardSection>
                                                 <FieldGroup as={TextAreaField}
-                                                    placeholder={translations.practice}
+                                                    placeholder="Place attendee names here, separated by commas"
                                                     name={`three_thirds_looking_up_practice`}
                                                     rows={3}
                                                     onBlur={save}
