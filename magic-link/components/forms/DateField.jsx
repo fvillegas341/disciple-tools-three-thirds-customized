@@ -1,6 +1,6 @@
-import React, {useState, Fragment} from "react";
+import React, { useState, Fragment } from "react";
 import "react-dates/initialize";
-import {SingleDatePicker} from "react-dates";
+import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import moment from 'moment'
 import HandleFieldChange from "./HandleFieldChange";
@@ -17,10 +17,10 @@ import CardSection from "../layout/cards/CardSection";
  * @constructor
  */
 const DateField = ({
-                       form: {setFieldValue, values},
-                       field,
-                       onChange
-                   }) => {
+    form: { setFieldValue, values },
+    field,
+    onChange
+}) => {
 
     const [focused, setFocused] = React.useState();
     const handleDateChange = (date) => {
@@ -32,13 +32,15 @@ const DateField = ({
     return (
         <Fragment>
             {onChange ? <HandleFieldChange name={field.name}
-                               onChange={onChange}/> : null }
+                onChange={onChange} /> : null}
             <SingleDatePicker
                 date={date}
                 onDateChange={handleDateChange}
                 focused={focused}
                 numberOfMonths={1}
-                onFocusChange={({focused}) => setFocused(focused)}
+                onFocusChange={({ focused }) => setFocused(focused)}
+                // Allow all dates to be selected past, present, and future
+                isOutsideRange={() => false}
             />
         </Fragment>
     );
