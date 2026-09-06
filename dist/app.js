@@ -8917,7 +8917,7 @@ var EditMeetingPage = function EditMeetingPage() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
       initialValues: _objectSpread({}, submission),
       children: function children(_ref) {
-        var _meeting$groups, _meeting$three_thirds;
+        var _meeting$groups, _meeting$three_thirds, _meeting$three_thirds2;
 
         var values = _ref.values,
             isSubmitting = _ref.isSubmitting,
@@ -9006,7 +9006,7 @@ var EditMeetingPage = function EditMeetingPage() {
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                        name: "three_thirds_looking_up_practice",
+                        name: "three_thirds_member_attendance",
                         request: function request(params) {
                           return (0,_src_api__WEBPACK_IMPORTED_MODULE_13__.searchGroupMembers)(_objectSpread(_objectSpread({}, params), {}, {
                             groups: (values.groups || []).map(function (group) {
@@ -9016,8 +9016,8 @@ var EditMeetingPage = function EditMeetingPage() {
                             })
                           }));
                         },
-                        defaultValue: meeting.three_thirds_looking_up_practice,
-                        component: _components_forms_CreatableRelationshipField__WEBPACK_IMPORTED_MODULE_15__["default"],
+                        defaultValue: (_meeting$three_thirds = meeting.three_thirds_member_attendance) === null || _meeting$three_thirds === void 0 ? void 0 : _meeting$three_thirds.posts,
+                        component: _components_forms_RelationshipField__WEBPACK_IMPORTED_MODULE_14__["default"],
                         isMulti: true,
                         onChange: save
                       })
@@ -9032,7 +9032,7 @@ var EditMeetingPage = function EditMeetingPage() {
                         name: "three_thirds_previous_meetings",
                         excludeOptions: [meeting.ID],
                         request: _src_api__WEBPACK_IMPORTED_MODULE_13__.searchMeetings,
-                        defaultValue: (_meeting$three_thirds = meeting.three_thirds_previous_meetings) === null || _meeting$three_thirds === void 0 ? void 0 : _meeting$three_thirds.posts,
+                        defaultValue: (_meeting$three_thirds2 = meeting.three_thirds_previous_meetings) === null || _meeting$three_thirds2 === void 0 ? void 0 : _meeting$three_thirds2.posts,
                         component: _components_forms_RelationshipField__WEBPACK_IMPORTED_MODULE_14__["default"],
                         isMulti: true,
                         onChange: save
