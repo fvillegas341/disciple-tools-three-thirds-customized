@@ -211,7 +211,7 @@ class DT_33_App_Controller
      * @param WP_REST_Request $request
      * @return array
      */
-    public function get_search_gorup_members(WP_REST_Request $request)
+    public function get_search_group_members(WP_REST_Request $request)
     {
         $group_ids = $request->get_param('groups');
         $search = $request->has_param('q') ? $request->get_param('q') : null;
