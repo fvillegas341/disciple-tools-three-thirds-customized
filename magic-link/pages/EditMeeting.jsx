@@ -115,13 +115,13 @@ const EditMeetingPage = () => {
                                             </CardHeading>
                                             <CardSection>
                                                 <FieldGroup
-                                                    name="three_thirds_looking_up_practice"
+                                                    name="three_thirds_member_attendance"
                                                     request={(params) => searchGroupMembers({
                                                         ...params,
                                                         groups: (values.groups || []).map((group) => group.value ?? group.ID ?? group)
                                                     })}
-                                                    defaultValue={meeting.three_thirds_looking_up_practice}
-                                                    component={CreatableRelationshipField}
+                                                    defaultValue={meeting.three_thirds_member_attendance?.posts}
+                                                    component={RelationshipField}
                                                     isMulti
                                                     onChange={save}
                                                 />

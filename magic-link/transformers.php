@@ -68,6 +68,9 @@ class DT_33_Transformers
             'three_thirds_looking_up_content' => $meeting['three_thirds_looking_up_content'] ?? '',
             'three_thirds_looking_up_practice' => $meeting['three_thirds_looking_up_practice'] ?? '',
             'three_thirds_looking_up_notes' => $meeting['three_thirds_looking_up_notes'] ?? '',
+            'three_thirds_member_attendance' => in_array('three_thirds_member_attendance', $with)
+                ? $this->members($meeting['three_thirds_member_attendance'])
+                : $this->ids($meeting['three_thirds_member_attendance']),
             'three_thirds_looking_ahead_content' => $meeting['three_thirds_looking_ahead_content'] ?? '',
             'three_thirds_looking_ahead_share_goal' => $meeting['three_thirds_looking_ahead_share_goal'] ?? 0,
             'three_thirds_looking_ahead_applications' => $meeting['three_thirds_looking_ahead_applications'] ?? '',

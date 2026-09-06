@@ -106,7 +106,7 @@ class DT_33_App_Controller
         }
 
         $previous_meeting = $this->meetings->previous($meeting);
-        $result = $this->transformers->meeting($meeting, ['three_thirds_previous_meetings', 'groups']);
+        $result = $this->transformers->meeting($meeting, ['three_thirds_previous_meetings', 'groups', 'three_thirds_member_attendance']);
         $result['previous_meeting'] = $this->transformers->meeting($previous_meeting);
         return $result;
     }
