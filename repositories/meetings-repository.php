@@ -17,7 +17,6 @@ class DT_33_Meetings_Repository
     public static $force_fields = [
         'groups' => [],
         'three_thirds_previous_meetings' => [],
-        'three_thirds_member_attendance' => [],
         'three_thirds_looking_back_new_believers' => []
     ];
 
