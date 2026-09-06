@@ -209,7 +209,7 @@ class DT_33_Meeting_Type
                 "description" => __("Members who attended this meeting.", 'disciple_tools_three_thirds'),
                 "type" => "connection",
                 "post_type" => "contacts",
-                "p2p_direction" => "to",
+                "p2p_direction" => "from",
                 "p2p_key" => self::POST_TYPE . "_to_members",
                 "tile" => "looking_up",
                 "icon" => get_template_directory_uri() . '/dt-assets/images/group.svg',
