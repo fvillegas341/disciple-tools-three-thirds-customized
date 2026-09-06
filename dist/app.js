@@ -8834,9 +8834,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_forms_CreatableRelationshipField__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/forms/CreatableRelationshipField */ "./magic-link/components/forms/CreatableRelationshipField.jsx");
 /* harmony import */ var _contexts_MeetingsContext__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../contexts/MeetingsContext */ "./magic-link/contexts/MeetingsContext.js");
 /* harmony import */ var react_alert__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-alert */ "./node_modules/react-alert/dist/esm/react-alert.js");
-/* harmony import */ var _components_forms_HandleFieldChange__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/forms/HandleFieldChange */ "./magic-link/components/forms/HandleFieldChange.jsx");
-/* harmony import */ var _components_forms_DateField__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/forms/DateField */ "./magic-link/components/forms/DateField.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_forms_DateField__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/forms/DateField */ "./magic-link/components/forms/DateField.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 var _excluded = ["values", "isSubmitting", "setFieldValue", "setTouched"];
@@ -8856,7 +8855,6 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -8907,7 +8905,7 @@ var EditMeetingPage = function EditMeetingPage() {
     return null;
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_layouts_ApplicationLayout__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_layouts_ApplicationLayout__WEBPACK_IMPORTED_MODULE_12__["default"], {
     title: translations.edit + ": " + meeting.name,
     breadcrumbs: [{
       link: '/',
@@ -8916,7 +8914,7 @@ var EditMeetingPage = function EditMeetingPage() {
       link: '/meetings/' + meeting.ID,
       label: meeting.name
     }],
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
       initialValues: _objectSpread({}, submission),
       children: function children(_ref) {
         var _meeting$groups, _meeting$three_thirds;
@@ -8959,20 +8957,20 @@ var EditMeetingPage = function EditMeetingPage() {
             }
           }, _callee, null, [[0, 6]]);
         })), [values]);
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_meetings_MeetingTabs__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("main", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_meetings_MeetingTabs__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("main", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
               className: "container",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabsContent, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabsContent, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
                   isActive: tab.key === 'DETAILS',
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h2", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: translations.group
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         name: "groups",
                         request: _src_api__WEBPACK_IMPORTED_MODULE_13__.searchGroups,
                         defaultValue: (_meeting$groups = meeting.groups) === null || _meeting$groups === void 0 ? void 0 : _meeting$groups.posts,
@@ -8981,47 +8979,56 @@ var EditMeetingPage = function EditMeetingPage() {
                         onChange: save
                       })
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("h2", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("h2", {
                         children: ["Lesson/", translations.meeting]
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         label: "Lesson Title",
                         type: "text",
                         name: "name",
                         placeholder: translations.name,
                         onBlur: save
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         label: "Date of Meeting",
                         name: "date",
                         placeholder: translations.date,
-                        component: _components_forms_DateField__WEBPACK_IMPORTED_MODULE_19__["default"],
+                        component: _components_forms_DateField__WEBPACK_IMPORTED_MODULE_18__["default"],
                         onChange: save
                       })]
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h2", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: "Member Attendance"
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                        as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
-                        placeholder: "Place attendee names here, separated by commas",
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         name: "three_thirds_looking_up_practice",
-                        rows: 3,
-                        onBlur: save
+                        request: function request(params) {
+                          return (0,_src_api__WEBPACK_IMPORTED_MODULE_13__.searchGroupMembers)(_objectSpread(_objectSpread({}, params), {}, {
+                            groups: (values.groups || []).map(function (group) {
+                              var _ref3, _group$value;
+
+                              return (_ref3 = (_group$value = group.value) !== null && _group$value !== void 0 ? _group$value : group.ID) !== null && _ref3 !== void 0 ? _ref3 : group;
+                            })
+                          }));
+                        },
+                        defaultValue: meeting.three_thirds_looking_up_practice,
+                        component: _components_forms_CreatableRelationshipField__WEBPACK_IMPORTED_MODULE_15__["default"],
+                        isMulti: true,
+                        onChange: save
                       })
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h2", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: translations.previous_meeting
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         name: "three_thirds_previous_meetings",
                         excludeOptions: [meeting.ID],
                         request: _src_api__WEBPACK_IMPORTED_MODULE_13__.searchMeetings,
@@ -9032,16 +9039,16 @@ var EditMeetingPage = function EditMeetingPage() {
                       })
                     })]
                   })]
-                }), !hideLookingBack && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
+                }), !hideLookingBack && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
                   className: "hidden",
                   isActive: tab.key === 'LOOKING_BACK',
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h2", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: translations.description
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         name: "three_thirds_looking_back_content",
                         placeholder: translations.description,
@@ -9049,46 +9056,46 @@ var EditMeetingPage = function EditMeetingPage() {
                         onBlur: save
                       })
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         children: translations.number_shared_label
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                         className: "grid-x grid-margin-x align-middle",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                           className: "cell small-6",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                             type: "number",
                             name: "three_thirds_looking_back_number_shared",
                             placeholder: "0",
                             onBlur: save
                           })
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                           className: "cell small-6",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("label", {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("label", {
                             children: translations.people
                           })
                         })]
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         className: "text-center",
                         children: translations.accepted_christ_label
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_RepeatingField__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_RepeatingField__WEBPACK_IMPORTED_MODULE_11__["default"], {
                           name: 'three_thirds_looking_back_new_believers',
                           placeholder: "Name",
                           onBlur: save
                         })
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         children: translations.notes
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: "Notes go here",
                         name: "three_thirds_looking_back_notes",
@@ -9097,16 +9104,16 @@ var EditMeetingPage = function EditMeetingPage() {
                       })]
                     })
                   })]
-                }), !hideLookingUp && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
+                }), !hideLookingUp && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
                   className: "hidden",
                   isActive: tab.key === 'LOOKING_UP',
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h2", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: translations.topic
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: translations.topic,
                         name: "three_thirds_looking_up_topic",
@@ -9114,33 +9121,33 @@ var EditMeetingPage = function EditMeetingPage() {
                         onBlur: save
                       })
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         children: translations.number_present_label
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                         className: "grid-x grid-margin-x align-middle",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                           className: "cell small-6",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                             type: "number",
                             name: "three_thirds_looking_up_number_attendees",
                             placeholder: "0",
                             onBlur: save
                           })
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                           className: "cell small-6",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("label", {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("label", {
                             children: translations.people
                           })
                         })]
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         children: translations.notes
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: translations.notes_label,
                         name: "three_thirds_looking_up_notes",
@@ -9149,16 +9156,16 @@ var EditMeetingPage = function EditMeetingPage() {
                       })]
                     })
                   })]
-                }), !hideLookingAhead && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
+                }), !hideLookingAhead && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_foundation__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
                   className: "hidden",
                   isActive: tab.key === 'LOOKING_AHEAD',
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h2", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: translations.description
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: translations.notes_label,
                         name: "three_thirds_looking_ahead_content",
@@ -9166,13 +9173,13 @@ var EditMeetingPage = function EditMeetingPage() {
                         onBlur: save
                       })
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h2", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: translations.application
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: translations.application,
                         name: "three_thirds_looking_ahead_applications",
@@ -9180,33 +9187,33 @@ var EditMeetingPage = function EditMeetingPage() {
                         onBlur: save
                       })
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         children: translations.share_goal_label
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                         className: "grid-x grid-margin-x align-middle",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                           className: "cell small-6",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                             type: "number",
                             name: "three_thirds_looking_ahead_share_goal",
                             placeholder: "0",
                             onBlur: save
                           })
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                           className: "cell small-6",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("label", {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("label", {
                             children: translations.people
                           })
                         })]
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         children: translations.prayer_requests
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: translations.prayer_requests_label,
                         name: "three_thirds_looking_ahead_prayer_topics",
@@ -9214,11 +9221,11 @@ var EditMeetingPage = function EditMeetingPage() {
                         onBlur: save
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("h3", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h3", {
                         children: translations.notes
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: translations.notes_label,
                         name: "three_thirds_looking_ahead_notes",
@@ -9693,6 +9700,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "login": () => (/* binding */ login),
 /* harmony export */   "logout": () => (/* binding */ logout),
 /* harmony export */   "saveMeeting": () => (/* binding */ saveMeeting),
+/* harmony export */   "searchGroupMembers": () => (/* binding */ searchGroupMembers),
 /* harmony export */   "searchGroups": () => (/* binding */ searchGroups),
 /* harmony export */   "searchMeetings": () => (/* binding */ searchMeetings),
 /* harmony export */   "searchMeetingsWithGroups": () => (/* binding */ searchMeetingsWithGroups)
@@ -9993,6 +10001,32 @@ var createMeeting = /*#__PURE__*/function () {
 
   return function createMeeting(_x11) {
     return _ref11.apply(this, arguments);
+  };
+}();
+/**
+ * Request to search members belonging to one or more groups
+ * @param params - expects { q. groups: [id, ...]] }
+ * @returns { Promise<Promise<unknown> | Promise<unknown>>}
+ */
+
+var searchGroupMembers = /*#__PURE__*/function () {
+  var _ref12 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(params) {
+    return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+      while (1) {
+        switch (_context12.prev = _context12.next) {
+          case 0:
+            return _context12.abrupt("return", (0,_magicLinkRequest__WEBPACK_IMPORTED_MODULE_0__["default"])('search_group_members', params, 'GET'));
+
+          case 1:
+          case "end":
+            return _context12.stop();
+        }
+      }
+    }, _callee12);
+  }));
+
+  return function searchGroupMembers(_x12) {
+    return _ref12.apply(this, arguments);
   };
 }();
 

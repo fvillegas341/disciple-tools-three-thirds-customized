@@ -101,3 +101,12 @@ export const createMeeting = async (data) => {
     return magicLinkRequest('meeting', data, 'POST')
 }
 
+/**
+ * Request to search members belonging to one or more groups
+ * @param params - expects { q. groups: [id, ...]] }
+ * @returns { Promise<Promise<unknown> | Promise<unknown>>}
+ */
+export const searchGroupMembers = async (params) => {
+    return magicLinkRequest('search_group_members', params, 'GET')
+}
+

@@ -1,12 +1,13 @@
 <?php
-if ( !defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 } // Exit if accessed directly.
 
 /**
  * Class DT_33_App_Controller
  */
-class DT_33_App_Controller {
+class DT_33_App_Controller
+{
     private $transformers;
     private static $_instance = null;
     public $meta = []; // Allows for instance specific data.
@@ -15,8 +16,9 @@ class DT_33_App_Controller {
     public $meetings = null;
     public $groups = null;
 
-    public static function instance() {
-        if ( is_null( self::$_instance ) ) {
+    public static function instance()
+    {
+        if (is_null(self::$_instance)) {
             self::$_instance = new self();
         }
         return self::$_instance;
@@ -25,7 +27,8 @@ class DT_33_App_Controller {
     /**
      * DT_33_App_Controller constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->transformers = DT_33_Transformers::instance();
         $this->utilities = DT_33_Utilities::instance();
         $this->meetings = DT_33_Meetings_Repository::instance();
@@ -37,30 +40,31 @@ class DT_33_App_Controller {
      * @param WP_REST_Request $request
      * @return array|WP_Error
      */
-    public function get_search_meetings_with_groups( WP_REST_Request $request ) {
+    public function get_search_meetings_with_groups(WP_REST_Request $request)
+    {
         //Defaults
-        $sort = $request->has_param( 'sort' ) ? $request->get_param( 'sort' ) : '-date';
+        $sort = $request->has_param('sort') ? $request->get_param('sort') : '-date';
         $initial_posts_per_page = 5;
-        $posts_per_page = $request->has_param( 'paged' ) ? 25 : $initial_posts_per_page; //Set the default depending if we are already paging
-        $posts_per_page = $request->has_param( 'per_page' ) ? $request->has_param( 'per_page' ) : $posts_per_page;
-        $paged = $request->has_param( 'paged' ) ? $request->get_param( 'paged' ) : 0;
-        $search = $request->has_param( 'q' ) ? $request->get_param( 'q' ) : null;
-        $filter = $request->has_param( 'filter' ) ? $request->get_param( 'filter' ) : null;
+        $posts_per_page = $request->has_param('paged') ? 25 : $initial_posts_per_page; //Set the default depending if we are already paging
+        $posts_per_page = $request->has_param('per_page') ? $request->has_param('per_page') : $posts_per_page;
+        $paged = $request->has_param('paged') ? $request->get_param('paged') : 0;
+        $search = $request->has_param('q') ? $request->get_param('q') : null;
+        $filter = $request->has_param('filter') ? $request->get_param('filter') : null;
 
         //Build up the search params
         $params = [];
         $params['sort'] = $sort;
-        $filtered = $this->meetings->filtered( $search, $filter );
-        $paginated = $this->utilities->paginate_posts_array( $filtered, $paged, $posts_per_page, $initial_posts_per_page );
+        $filtered = $this->meetings->filtered($search, $filter);
+        $paginated = $this->utilities->paginate_posts_array($filtered, $paged, $posts_per_page, $initial_posts_per_page);
         $groups = $this->groups->with_meetings();
 
-        $meetings = $this->transformers->meetings( $paginated, [ 'groups' ] );
+        $meetings = $this->transformers->meetings($paginated, ['groups']);
         $meetings['q'] = $search;
         $meetings['filter'] = $filter;
 
         return [
             'meetings' => $meetings,
-            'groups'   => $this->transformers->groups( $groups ),
+            'groups' => $this->transformers->groups($groups),
         ];
     }
 
@@ -69,9 +73,10 @@ class DT_33_App_Controller {
      * @param WP_REST_Request $request
      * @return array|WP_Error
      */
-    public function get_search_meetings( WP_REST_Request $request ) {
+    public function get_search_meetings(WP_REST_Request $request)
+    {
         return $this->transformers->meetings(
-            $this->meetings->search( $request->get_param( 'q' ) )
+            $this->meetings->search($request->get_param('q'))
         );
     }
 
@@ -80,7 +85,8 @@ class DT_33_App_Controller {
      * @param WP_REST_Request $request
      * @return array|WP_Error
      */
-    public function get_meetings( WP_REST_Request $request ) {
+    public function get_meetings(WP_REST_Request $request)
+    {
         return $this->transformers->groups(
             $this->meetings->all()
         );
@@ -92,71 +98,73 @@ class DT_33_App_Controller {
      * Error
      * @return array|mixed
      */
-    public function get_meeting( WP_REST_Request $request ) {
-        $meeting = $this->meetings->find( $request->get_param( 'meeting_id' ) );
-        if ( !$meeting ) {
-            new WP_Error( 'no_posts', 'Meeting not found.', [ 'status' => 404 ] );
+    public function get_meeting(WP_REST_Request $request)
+    {
+        $meeting = $this->meetings->find($request->get_param('meeting_id'));
+        if (!$meeting) {
+            new WP_Error('no_posts', 'Meeting not found.', ['status' => 404]);
         }
 
-        $previous_meeting = $this->meetings->previous( $meeting );
-        $result = $this->transformers->meeting( $meeting, [ 'three_thirds_previous_meetings', 'groups' ] );
-        $result['previous_meeting'] = $this->transformers->meeting( $previous_meeting );
+        $previous_meeting = $this->meetings->previous($meeting);
+        $result = $this->transformers->meeting($meeting, ['three_thirds_previous_meetings', 'groups']);
+        $result['previous_meeting'] = $this->transformers->meeting($previous_meeting);
         return $result;
     }
 
     /**
      * Handles PUT request to save a meeting
      */
-    public function put_meeting( WP_REST_Request $request ) {
-        $meeting = $this->meetings->find( $request->get_param( 'ID' ) );
+    public function put_meeting(WP_REST_Request $request)
+    {
+        $meeting = $this->meetings->find($request->get_param('ID'));
 
-        if ( !$meeting ) {
-            return new WP_Error( 'no_posts', 'Meeting not found.', [ 'status' => 404 ] );
+        if (!$meeting) {
+            return new WP_Error('no_posts', 'Meeting not found.', ['status' => 404]);
         }
 
         $params = $request->get_params();
 
         //If groups are non-numeric, they are groups to be created.
-        if ( isset( $params['groups'] ) && is_array( $params['groups'] ) ) {
-            $params['groups'] = array_map( function ( $value ) {
+        if (isset($params['groups']) && is_array($params['groups'])) {
+            $params['groups'] = array_map(function ($value) {
                 //It's an ID.
-                if ( is_numeric( $value ) ) {
+                if (is_numeric($value)) {
                     return $value;
                 }
 
                 //It might be an empty string.
-                if ( !$value ) {
+                if (!$value) {
                     return $value;
                 }
 
 
                 //Is this a duplicate request?
-                $group = $this->groups->find_by_title( $value );
+                $group = $this->groups->find_by_title($value);
 
-                if ( $group ) {
+                if ($group) {
                     return (string) $group['ID'];
                 }
 
                 //It's a title to be created.
-                $group = $this->groups->create( [
+                $group = $this->groups->create([
                     'title' => $value,
-                ] );
+                ]);
 
-                if ( is_wp_error( $group ) ) {
+                if (is_wp_error($group)) {
                     return '';
                 }
 
                 return (string) $group['ID'];
-            }, $params['groups'] );
+            }, $params['groups']);
         }
 
 
-        $meeting = $this->meetings->save( $meeting['ID'], $params );
-        if ( is_wp_error( $meeting ) ) {
+        $meeting = $this->meetings->save($meeting['ID'], $params);
+        if (is_wp_error($meeting)) {
             return $meeting;
         }
 
-        return $this->transformers->meeting( $meeting );
+        return $this->transformers->meeting($meeting);
     }
 
     /**
@@ -164,14 +172,15 @@ class DT_33_App_Controller {
      * @param WP_REST_Request $request
      * @return array|false|int|mixed|WP_Error|null
      */
-    public function post_meeting( WP_REST_Request $request ) {
+    public function post_meeting(WP_REST_Request $request)
+    {
         $params = $request->get_params();
-        $meeting = $this->meetings->create( $params );
-        if ( is_wp_error( $meeting ) ) {
+        $meeting = $this->meetings->create($params);
+        if (is_wp_error($meeting)) {
             return $meeting;
         }
 
-        return $this->transformers->meeting( $meeting );
+        return $this->transformers->meeting($meeting);
     }
 
     /**
@@ -179,19 +188,46 @@ class DT_33_App_Controller {
      * @param WP_REST_Request $request
      * @return array|WP_Error
      */
-    public function get_search_groups( WP_REST_Request $request ) {
+    public function get_search_groups(WP_REST_Request $request)
+    {
         return $this->transformers->meetings(
-            $this->groups->search( $request->get_param( 'q' ) )
+            $this->groups->search($request->get_param('q'))
         );
     }
 
     /**
      * Return GET request to get all the groups for the logged in user
      */
-    public function get_groups( WP_REST_Request $request ) {
+    public function get_groups(WP_REST_Request $request)
+    {
         return $this->transformers->groups(
             $this->groups->all()
         );
+    }
+
+    /**
+     * Handles GET request to fetch members belonging to one or more groups.
+     * Used to scope the "Member Attendance" field to the meeting's group(s).
+     * @param WP_REST_Request $request
+     * @return array
+     */
+    public function get_search_gorup_members(WP_REST_Request $request)
+    {
+        $group_ids = $request->get_param('groups');
+        $search = $request->has_param('q') ? $request->get_param('q') : null;
+
+        if (!$group_ids) {
+            return [
+                'total' => 0,
+                'type' => 'member',
+                'posts' => []
+            ];
+        }
+
+        return $this->transformers->members(
+            $this->groups->search_members($group_ids, $search)
+        );
+
     }
 }
 

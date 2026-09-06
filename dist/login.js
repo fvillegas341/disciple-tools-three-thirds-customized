@@ -1476,6 +1476,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "login": () => (/* binding */ login),
 /* harmony export */   "logout": () => (/* binding */ logout),
 /* harmony export */   "saveMeeting": () => (/* binding */ saveMeeting),
+/* harmony export */   "searchGroupMembers": () => (/* binding */ searchGroupMembers),
 /* harmony export */   "searchGroups": () => (/* binding */ searchGroups),
 /* harmony export */   "searchMeetings": () => (/* binding */ searchMeetings),
 /* harmony export */   "searchMeetingsWithGroups": () => (/* binding */ searchMeetingsWithGroups)
@@ -1776,6 +1777,32 @@ var createMeeting = /*#__PURE__*/function () {
 
   return function createMeeting(_x11) {
     return _ref11.apply(this, arguments);
+  };
+}();
+/**
+ * Request to search members belonging to one or more groups
+ * @param params - expects { q. groups: [id, ...]] }
+ * @returns { Promise<Promise<unknown> | Promise<unknown>>}
+ */
+
+var searchGroupMembers = /*#__PURE__*/function () {
+  var _ref12 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(params) {
+    return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+      while (1) {
+        switch (_context12.prev = _context12.next) {
+          case 0:
+            return _context12.abrupt("return", (0,_magicLinkRequest__WEBPACK_IMPORTED_MODULE_0__["default"])('search_group_members', params, 'GET'));
+
+          case 1:
+          case "end":
+            return _context12.stop();
+        }
+      }
+    }, _callee12);
+  }));
+
+  return function searchGroupMembers(_x12) {
+    return _ref12.apply(this, arguments);
   };
 }();
 

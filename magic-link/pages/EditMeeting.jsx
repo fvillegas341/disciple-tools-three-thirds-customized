@@ -11,13 +11,12 @@ import FieldGroup from "../components/forms/FieldGroup";
 import TextAreaField from "../components/forms/TextAreaField";
 import RepeatingField from "../components/forms/RepeatingField";
 import ApplicationLayout from "../layouts/ApplicationLayout";
-import { saveMeeting, searchGroups, searchMeetings } from "../src/api";
+import { saveMeeting, searchGroups, searchGroupMembers, searchMeetings } from "../src/api";
 import RelationshipField from "../components/forms/RelationshipField";
 import CreatableRelationshipField from "../components/forms/CreatableRelationshipField";
 import MeetingsContext from "../contexts/MeetingsContext";
 import { useAlert } from 'react-alert'
-import HandleFieldChange from "../components/forms/HandleFieldChange";
-import DateField from '../components/forms/DateField'
+import DateField from '../components/forms/DateField';
 
 /**
  * The edit meeting page
@@ -115,11 +114,16 @@ const EditMeetingPage = () => {
                                                 <h2>Member Attendance</h2>
                                             </CardHeading>
                                             <CardSection>
-                                                <FieldGroup as={TextAreaField}
-                                                    placeholder="Place attendee names here, separated by commas"
-                                                    name={`three_thirds_looking_up_practice`}
-                                                    rows={3}
-                                                    onBlur={save}
+                                                <FieldGroup
+                                                    name="three_thirds_looking_up_practice"
+                                                    request={(params) => searchGroupMembers({
+                                                        ...params,
+                                                        groups: (values.groups || []).map((group) => group.value ?? group.ID ?? group)
+                                                    })}
+                                                    defaultValue={meeting.three_thirds_looking_up_practice}
+                                                    component={CreatableRelationshipField}
+                                                    isMulti
+                                                    onChange={save}
                                                 />
                                             </CardSection>
                                         </Card>
