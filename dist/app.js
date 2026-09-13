@@ -9004,9 +9004,9 @@ var EditMeetingPage = function EditMeetingPage() {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
                         children: "Member Attendance"
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                        name: "three_thirds_member_attendance",
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      children: ["// will need to research why this is not working, but for now, // we will just use a text area for member attendance", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                        name: "three_thirds_looking_up_practice",
                         request: function request(params) {
                           return (0,_src_api__WEBPACK_IMPORTED_MODULE_13__.searchGroupMembers)(_objectSpread(_objectSpread({}, params), {}, {
                             groups: (values.groups || []).map(function (group) {
@@ -9020,7 +9020,7 @@ var EditMeetingPage = function EditMeetingPage() {
                         component: _components_forms_RelationshipField__WEBPACK_IMPORTED_MODULE_14__["default"],
                         isMulti: true,
                         onChange: save
-                      })
+                      })]
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
