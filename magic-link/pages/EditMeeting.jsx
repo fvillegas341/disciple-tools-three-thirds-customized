@@ -117,12 +117,12 @@ const EditMeetingPage = () => {
                                                 // will need to research why this is not working, but for now,
                                                 // we will just use a text area for member attendance
                                                 <FieldGroup
-                                                    name="three_thirds_members_attendance"
+                                                    name="three_thirds_member_attendance"
                                                     request={(params) => searchGroupMembers({
                                                         ...params,
                                                         groups: (values.groups || []).map((group) => group.value ?? group.ID ?? group)
                                                     })}
-                                                    defaultValue={meeting.three_thirds_members_attendance?.posts}
+                                                    defaultValue={meeting.three_thirds_member_attendance?.posts}
                                                     component={RelationshipField}
                                                     isMulti
                                                     onChange={save}

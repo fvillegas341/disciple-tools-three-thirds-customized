@@ -9006,7 +9006,7 @@ var EditMeetingPage = function EditMeetingPage() {
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
                       children: ["// will need to research why this is not working, but for now, // we will just use a text area for member attendance", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                        name: "three_thirds_members_attendance",
+                        name: "three_thirds_member_attendance",
                         request: function request(params) {
                           return (0,_src_api__WEBPACK_IMPORTED_MODULE_13__.searchGroupMembers)(_objectSpread(_objectSpread({}, params), {}, {
                             groups: (values.groups || []).map(function (group) {
@@ -9016,7 +9016,7 @@ var EditMeetingPage = function EditMeetingPage() {
                             })
                           }));
                         },
-                        defaultValue: (_meeting$three_thirds = meeting.three_thirds_members_attendance) === null || _meeting$three_thirds === void 0 ? void 0 : _meeting$three_thirds.posts,
+                        defaultValue: (_meeting$three_thirds = meeting.three_thirds_member_attendance) === null || _meeting$three_thirds === void 0 ? void 0 : _meeting$three_thirds.posts,
                         component: _components_forms_RelationshipField__WEBPACK_IMPORTED_MODULE_14__["default"],
                         isMulti: true,
                         onChange: save
