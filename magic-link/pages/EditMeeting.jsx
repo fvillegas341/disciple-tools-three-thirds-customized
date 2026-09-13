@@ -114,8 +114,6 @@ const EditMeetingPage = () => {
                                                 <h2>Member Attendance</h2>
                                             </CardHeading>
                                             <CardSection>
-                                                // will need to research why this is not working, but for now,
-                                                // we will just use a text area for member attendance
                                                 <FieldGroup
                                                     name="three_thirds_member_attendance"
                                                     request={(params) => searchGroupMembers({
