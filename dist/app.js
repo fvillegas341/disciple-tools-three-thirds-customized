@@ -9016,7 +9016,7 @@ var EditMeetingPage = function EditMeetingPage() {
                             })
                           }));
                         },
-                        defaultValue: (_meeting$three_thirds = meeting.three_thirds_member_attendance) === null || _meeting$three_thirds === void 0 ? void 0 : _meeting$three_thirds.posts,
+                        defaultValue: (_meeting$three_thirds = meeting.three_thirds_looking_up_practice) === null || _meeting$three_thirds === void 0 ? void 0 : _meeting$three_thirds.posts,
                         component: _components_forms_RelationshipField__WEBPACK_IMPORTED_MODULE_14__["default"],
                         isMulti: true,
                         onChange: save

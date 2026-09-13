@@ -122,7 +122,7 @@ const EditMeetingPage = () => {
                                                         ...params,
                                                         groups: (values.groups || []).map((group) => group.value ?? group.ID ?? group)
                                                     })}
-                                                    defaultValue={meeting.three_thirds_member_attendance?.posts}
+                                                    defaultValue={meeting.three_thirds_looking_up_practice?.posts}
                                                     component={RelationshipField}
                                                     isMulti
                                                     onChange={save}
