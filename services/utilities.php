@@ -4,11 +4,13 @@
  * Generic helper functions
  * Class DT_33_Utilities
  */
-class DT_33_Utilities {
+class DT_33_Utilities
+{
     private static $_instance = null;
 
-    public static function instance() {
-        if ( is_null( self::$_instance ) ) {
+    public static function instance()
+    {
+        if (is_null(self::$_instance)) {
             self::$_instance = new self();
         }
         return self::$_instance;
@@ -19,12 +21,13 @@ class DT_33_Utilities {
      * @param $uri
      * @return bool
      */
-    public function is_three_thirds_meeting( $id ) {
-        $field = get_post_meta( $id, 'type' );
-        if ( !is_array( $field ) ) {
+    public function is_three_thirds_meeting($id)
+    {
+        $field = get_post_meta($id, 'type');
+        if (!is_array($field)) {
             return false;
         }
-        return in_array( 'three_thirds', $field );
+        return in_array('three_thirds', $field);
     }
 
     /**
@@ -35,19 +38,20 @@ class DT_33_Utilities {
      * @param int $inital_offset
      * @return array
      */
-    public function paginate_posts_array( $posts, $paged, $per_page, $inital_offset = 0 ) {
-        $offset = ( ( $paged - 1 ) * $per_page ) + $inital_offset;
+    public function paginate_posts_array($posts, $paged, $per_page, $inital_offset = 0)
+    {
+        $offset = (($paged - 1) * $per_page) + $inital_offset;
         $limit = $offset + $per_page;
-        $page = array_slice( $posts, $offset, $limit );
+        $page = array_slice($posts, $offset, $limit);
 
         return [
-            'posts'    => $page,
+            'posts' => $page,
             'per_page' => $per_page,
-            'paged'    => $paged,
-            'total'    => count( $posts ),
-            'count'    => count( $page ),
-            'offset'   => $offset,
-            'limit'    => $limit
+            'paged' => $paged,
+            'total' => count($posts),
+            'count' => count($page),
+            'offset' => $offset,
+            'limit' => $limit
         ];
     }
 
@@ -57,13 +61,14 @@ class DT_33_Utilities {
      * @param bool $force
      * @return array
      */
-    public function format_array_field_value( $value, $force = true ) {
+    public function format_array_field_value($value, $force = true)
+    {
         return [
-            'values'       => array_map( function ( $value ) {
+            'values' => array_values(array_map(function ($value) {
                 return [
                     'value' => $value ? $value : []
                 ];
-            }, array_unique( array_filter( $value ) ) ),
+            }, array_unique(array_filter($value)))),
             'force_values' => $force
         ];
     }
@@ -73,8 +78,9 @@ class DT_33_Utilities {
      * @param $name
      * @return bool
      */
-    public function has_option( $name ) {
-        return get_option( $name ) !== false;
+    public function has_option($name)
+    {
+        return get_option($name) !== false;
     }
 
     /**
@@ -83,11 +89,12 @@ class DT_33_Utilities {
      * @param string $value
      * @param string $autoload
      */
-    public function add_or_update_option( $option, $value = '', $autoload = '' ) {
-        if ( $this->has_option( $option ) ) {
-            update_option( $option, $value, $autoload );
+    public function add_or_update_option($option, $value = '', $autoload = '')
+    {
+        if ($this->has_option($option)) {
+            update_option($option, $value, $autoload);
         } else {
-            add_option( $option, $value, "", $autoload );
+            add_option($option, $value, "", $autoload);
         }
     }
 }
