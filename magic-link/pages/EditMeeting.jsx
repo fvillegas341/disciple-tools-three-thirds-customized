@@ -120,7 +120,7 @@ const EditMeetingPage = () => {
                                                     name="three_thirds_looking_up_practice"
                                                     request={(params) => searchGroupMembers({
                                                         ...params,
-                                                        groups: (values.groups || []).map((group) => group.value ?? group.ID ?? group)
+                                                        groups: (values.groups || []).map((group) => group.value ?? group.name ?? group)
                                                     })}
                                                     defaultValue={meeting.three_thirds_looking_up_practice?.posts}
                                                     component={RelationshipField}

@@ -9012,7 +9012,7 @@ var EditMeetingPage = function EditMeetingPage() {
                             groups: (values.groups || []).map(function (group) {
                               var _ref3, _group$value;
 
-                              return (_ref3 = (_group$value = group.value) !== null && _group$value !== void 0 ? _group$value : group.ID) !== null && _ref3 !== void 0 ? _ref3 : group;
+                              return (_ref3 = (_group$value = group.value) !== null && _group$value !== void 0 ? _group$value : group.name) !== null && _ref3 !== void 0 ? _ref3 : group;
                             })
                           }));
                         },
