@@ -9032,6 +9032,7 @@ var EditMeetingPage = function EditMeetingPage() {
                         as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
                         placeholder: "Notes go here",
                         name: "three_thirds_looking_up_practice",
+                        defaultValue: meeting.three_thirds_looking_up_practice,
                         rows: 3,
                         onBlur: save
                       })

@@ -134,7 +134,8 @@ const EditMeetingPage = () => {
                                             <CardSection>
                                                 <FieldGroup as={TextAreaField}
                                                     placeholder={"Notes go here"}
-                                                    name={`three_thirds_looking_up_practice`}
+                                                    name="three_thirds_looking_up_practice"
+                                                    defaultValue={meeting.three_thirds_looking_up_practice}
                                                     rows={3}
                                                     onBlur={save}
                                                 />
