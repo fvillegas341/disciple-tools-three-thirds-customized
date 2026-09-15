@@ -129,16 +129,14 @@ const EditMeetingPage = () => {
                                         </Card>
                                         <Card>
                                             <CardHeading>
-                                                <h2>{translations.previous_meeting}</h2>
+                                                <h2>Additional Notes</h2>
                                             </CardHeading>
                                             <CardSection>
-                                                <FieldGroup name="three_thirds_previous_meetings"
-                                                    excludeOptions={[meeting.ID]}
-                                                    request={searchMeetings}
-                                                    defaultValue={meeting.three_thirds_previous_meetings?.posts}
-                                                    component={RelationshipField}
-                                                    isMulti
-                                                    onChange={save}
+                                                <FieldGroup as={TextAreaField}
+                                                    placeholder={"Notes go here"}
+                                                    name={`three_thirds_looking_up_practice`}
+                                                    rows={3}
+                                                    onBlur={save}
                                                 />
                                             </CardSection>
                                         </Card>

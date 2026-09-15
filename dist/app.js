@@ -8917,7 +8917,7 @@ var EditMeetingPage = function EditMeetingPage() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
       initialValues: _objectSpread({}, submission),
       children: function children(_ref) {
-        var _meeting$groups, _meeting$three_thirds, _meeting$three_thirds2;
+        var _meeting$groups, _meeting$three_thirds;
 
         var values = _ref.values,
             isSubmitting = _ref.isSubmitting,
@@ -9025,17 +9025,15 @@ var EditMeetingPage = function EditMeetingPage() {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_6__["default"], {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("h2", {
-                        children: translations.previous_meeting
+                        children: "Additional Notes"
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_forms_FieldGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                        name: "three_thirds_previous_meetings",
-                        excludeOptions: [meeting.ID],
-                        request: _src_api__WEBPACK_IMPORTED_MODULE_13__.searchMeetings,
-                        defaultValue: (_meeting$three_thirds2 = meeting.three_thirds_previous_meetings) === null || _meeting$three_thirds2 === void 0 ? void 0 : _meeting$three_thirds2.posts,
-                        component: _components_forms_RelationshipField__WEBPACK_IMPORTED_MODULE_14__["default"],
-                        isMulti: true,
-                        onChange: save
+                        as: _components_forms_TextAreaField__WEBPACK_IMPORTED_MODULE_10__["default"],
+                        placeholder: "Notes go here",
+                        name: "three_thirds_looking_up_practice",
+                        rows: 3,
+                        onBlur: save
                       })
                     })]
                   })]
