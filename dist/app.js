@@ -5939,18 +5939,19 @@ module.exports = function shimFlat() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _contexts_AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contexts/AppContext */ "./magic-link/contexts/AppContext.js");
 /* harmony import */ var _pages_Meeting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Meeting */ "./magic-link/pages/Meeting.jsx");
 /* harmony import */ var _pages_EditMeeting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/EditMeeting */ "./magic-link/pages/EditMeeting.jsx");
 /* harmony import */ var _pages_NotFound__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/NotFound */ "./magic-link/pages/NotFound.jsx");
 /* harmony import */ var _pages_Dashboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Dashboard */ "./magic-link/pages/Dashboard.jsx");
-/* harmony import */ var _contexts_MeetingContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./contexts/MeetingContext */ "./magic-link/contexts/MeetingContext.js");
-/* harmony import */ var react_alert__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-alert */ "./node_modules/react-alert/dist/esm/react-alert.js");
-/* harmony import */ var _components_ReactAlertTemplate__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/ReactAlertTemplate */ "./magic-link/components/ReactAlertTemplate.jsx");
-/* harmony import */ var _pages_CreateMeeting__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/CreateMeeting */ "./magic-link/pages/CreateMeeting.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_TeamStatus__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/TeamStatus */ "./magic-link/pages/TeamStatus.jsx");
+/* harmony import */ var _contexts_MeetingContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./contexts/MeetingContext */ "./magic-link/contexts/MeetingContext.js");
+/* harmony import */ var react_alert__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-alert */ "./node_modules/react-alert/dist/esm/react-alert.js");
+/* harmony import */ var _components_ReactAlertTemplate__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/ReactAlertTemplate */ "./magic-link/components/ReactAlertTemplate.jsx");
+/* harmony import */ var _pages_CreateMeeting__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/CreateMeeting */ "./magic-link/pages/CreateMeeting.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -5971,13 +5972,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var alertOptions = {
   // you can also just use 'bottom center'
-  position: react_alert__WEBPACK_IMPORTED_MODULE_8__.positions.BOTTOM_RIGHT,
+  position: react_alert__WEBPACK_IMPORTED_MODULE_9__.positions.BOTTOM_RIGHT,
   timeout: 3000,
   offset: '10px',
-  type: react_alert__WEBPACK_IMPORTED_MODULE_8__.types.INFO,
-  transition: react_alert__WEBPACK_IMPORTED_MODULE_8__.transitions.SCALE
+  type: react_alert__WEBPACK_IMPORTED_MODULE_9__.types.INFO,
+  transition: react_alert__WEBPACK_IMPORTED_MODULE_9__.transitions.SCALE
 };
 /**
  * The magic link react app
@@ -5986,31 +5988,34 @@ var alertOptions = {
  */
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.HashRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_contexts_AppContext__WEBPACK_IMPORTED_MODULE_2__.AppContextProvider, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_alert__WEBPACK_IMPORTED_MODULE_8__.Provider, _objectSpread(_objectSpread({
-        template: _components_ReactAlertTemplate__WEBPACK_IMPORTED_MODULE_9__["default"]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.HashRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_contexts_AppContext__WEBPACK_IMPORTED_MODULE_2__.AppContextProvider, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_alert__WEBPACK_IMPORTED_MODULE_9__.Provider, _objectSpread(_objectSpread({
+        template: _components_ReactAlertTemplate__WEBPACK_IMPORTED_MODULE_10__["default"]
       }, alertOptions), {}, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Routes, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Routes, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+            path: "/team-status",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_TeamStatus__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/meetings/create",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_CreateMeeting__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_CreateMeeting__WEBPACK_IMPORTED_MODULE_11__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/meetings/edit/:id",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_contexts_MeetingContext__WEBPACK_IMPORTED_MODULE_7__.MeetingContextProvider, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_EditMeeting__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_contexts_MeetingContext__WEBPACK_IMPORTED_MODULE_8__.MeetingContextProvider, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_EditMeeting__WEBPACK_IMPORTED_MODULE_4__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/meetings/:id",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_contexts_MeetingContext__WEBPACK_IMPORTED_MODULE_7__.MeetingContextProvider, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_Meeting__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_contexts_MeetingContext__WEBPACK_IMPORTED_MODULE_8__.MeetingContextProvider, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_Meeting__WEBPACK_IMPORTED_MODULE_3__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "*",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_NotFound__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_NotFound__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })]
         })
       }))
@@ -6018,7 +6023,7 @@ function App() {
   });
 }
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(App, {}), document.getElementById('app'));
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(App, {}), document.getElementById('app'));
 
 /***/ }),
 
@@ -8753,8 +8758,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _contexts_AppContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../contexts/AppContext */ "./magic-link/contexts/AppContext.js");
 /* harmony import */ var react_foundation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-foundation */ "./node_modules/react-foundation/lib/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _src_helpers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../src/helpers */ "./magic-link/src/helpers.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -8774,27 +8781,39 @@ __webpack_require__.r(__webpack_exports__);
 
 var Dashboard = function Dashboard() {
   var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_4__.useContext)(_contexts_AppContext__WEBPACK_IMPORTED_MODULE_5__["default"]),
+      user = _useContext.user,
       magicLink = _useContext.magicLink,
       translations = _useContext.translations;
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_layouts_ApplicationLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  var teamStatusLink = (0,_src_helpers__WEBPACK_IMPORTED_MODULE_7__.getTeamStatusLink)(user.ID);
+  var isExternal = teamStatusLink && teamStatusLink.startsWith("http");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_layouts_ApplicationLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: translations.title,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("main", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("main", {
       className: "dashboard",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_foundation__WEBPACK_IMPORTED_MODULE_6__.ButtonGroup, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_foundation__WEBPACK_IMPORTED_MODULE_6__.ButtonGroup, {
           isExpanded: true,
           className: "margin-bottom-1",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
             to: "/meetings/create",
             className: "button",
             children: translations.create_meeting
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_meetings_Meetings__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_meetings_Meetings__WEBPACK_IMPORTED_MODULE_0__["default"], {})
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          className: "text-center margin-top-1",
+          children: teamStatusLink && (isExternal ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+            href: teamStatusLink,
+            children: translations.team_status_link
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+            to: teamStatusLink,
+            children: translations.team_status_link
+          }))
         })]
       })
     })
@@ -9682,6 +9701,59 @@ var NotFound = function NotFound() {
 
 /***/ }),
 
+/***/ "./magic-link/pages/TeamStatus.jsx":
+/*!*****************************************!*\
+  !*** ./magic-link/pages/TeamStatus.jsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _contexts_AppContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../contexts/AppContext */ "./magic-link/contexts/AppContext.js");
+/* harmony import */ var _layouts_ApplicationLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layouts/ApplicationLayout */ "./magic-link/layouts/ApplicationLayout.jsx");
+/* harmony import */ var _components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layout/cards/Card */ "./magic-link/components/layout/cards/Card.jsx");
+/* harmony import */ var _components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout/cards/CardHeading */ "./magic-link/components/layout/cards/CardHeading.jsx");
+/* harmony import */ var _components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/layout/cards/CardSection */ "./magic-link/components/layout/cards/CardSection.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+var TeamStatus = function TeamStatus() {
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_contexts_AppContext__WEBPACK_IMPORTED_MODULE_1__["default"]),
+      translations = _useContext.translations;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_layouts_ApplicationLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: translations.title,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("main", {
+      className: "team-status",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_layout_cards_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_layout_cards_CardHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+              children: translations.team_status_link
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_layout_cards_CardSection__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
+        })
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TeamStatus);
+
+/***/ }),
+
 /***/ "./magic-link/src/api.js":
 /*!*******************************!*\
   !*** ./magic-link/src/api.js ***!
@@ -10041,6 +10113,7 @@ var searchGroupMembers = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "chunkArray": () => (/* binding */ chunkArray),
+/* harmony export */   "getTeamStatusLink": () => (/* binding */ getTeamStatusLink),
 /* harmony export */   "useHtml": () => (/* binding */ useHtml)
 /* harmony export */ });
 /**
@@ -10069,6 +10142,77 @@ var useHtml = function useHtml(html) {
   return {
     __html: html
   };
+};
+/**
+ * Look up the "status of your team" link for a given WP user.
+ * Each member gets their own static page, keyed by their WP user ID.
+ * Returns null for anyone not yet assigned a page — callers should
+ * hide the link entirely in that case, not fall back to a default.
+ * @param userId 
+ * @returns {string|null} The team status link for the given user ID, or null if not found
+ */
+
+var getTeamStatusLink = function getTeamStatusLink(userId) {
+  switch (userId) {
+    case 6:
+      // Glen Noel — El Shaddai
+      return "https://dng.jrm.church/l/p/el-shaddai-members-lesson-status";
+
+    case 7:
+      // Francisco "JonJon" — El Roi
+      return "https://dng.jrm.church/l/p/el-roi-members-lesson-status";
+
+    case 8:
+      // Heidi Anne — Adonai Tzidkenu
+      return "https://dng.jrm.church/l/p/adonai-tzidkenu-members-lesson-status";
+
+    case 9:
+      // Noreen — Immanuel
+      return "https://dng.jrm.church/l/p/immanuel-members-lesson-status";
+
+    case 10:
+      // Cristina — The Light of the World
+      return "https://dng.jrm.church/l/p/the-light-of-the-world-members-lesson-status";
+
+    case 11:
+      // Mark Ryan — Jehova Jireh
+      return "https://dng.jrm.church/l/p/jehova-jireh-members-lesson-status";
+
+    case 12:
+      // Zenaida — Jehova Rohi
+      return "https://dng.jrm.church/l/p/jehova-rohi-members-lesson-status";
+
+    case 13:
+      // Conerlyn — The Living Water
+      return "https://dng.jrm.church/l/p/the-living-water-members-lesson-status";
+
+    case 14:
+      // Rem David — The Branch and the Vine
+      return "https://dng.jrm.church/l/p/the-branch-and-the-vine-members-lesson-status";
+
+    case 15:
+      // Haydee — The Covenant Keepers
+      return "https://dng.jrm.church/l/p/the-covenant-keepers-members-lesson-status";
+
+    case 16:
+      // Donna — The Good Shepherd
+      return "https://dng.jrm.church/l/p/the-good-shepherd-members-lesson-status";
+
+    case 17:
+      // Irenea — The Rock of Ages
+      return "https://dng.jrm.church/l/p/the-rock-of-ages-members-lesson-status";
+
+    case 19:
+      // Mary Faye Gomez — Jehovah Nissi
+      return "https://dng.jrm.church/l/p/jehovah-nissi-members-lesson-status";
+
+    case 20:
+      // Matthew "Matt" Gomez — Jehovah Shalom
+      return "https://dng.jrm.church/l/p/jehovah-shalom-members-lesson-status";
+
+    default:
+      return null;
+  }
 };
 
 /***/ }),
