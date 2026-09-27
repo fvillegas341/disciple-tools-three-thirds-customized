@@ -73,7 +73,7 @@ class DT_33_Translations
             'share_goal_label' => __('How many people are we going to share with?', 'dt33'),
             'sign_in' => __('Sign in', 'dt33'),
             'submit' => __('Submit', 'dt33'),
-            'team_status_link' => __('Want to see the who complete what lesson in your team?', 'dt33'),
+            'team_status_link' => __('Want to see who completed what lesson in your team?', 'dt33'),
             'title' => __('3/3rds Meetings', 'dt33'),
             'topic' => __('Topic', 'dt33'),
         ];

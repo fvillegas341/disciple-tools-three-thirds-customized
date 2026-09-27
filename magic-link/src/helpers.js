@@ -32,8 +32,6 @@ export const useHtml = ( html ) => {
  */
 export const getTeamStatusLink = ( userId ) => {
   switch ( userId ) {
-    case 2: // TEMP — remove before deploying, just for local testing
-      return "https://dng.jrm.church/l/p/el-shaddai-members-lesson-status"; 
     case 6: // Glen Noel — El Shaddai
       return "https://dng.jrm.church/l/p/el-shaddai-members-lesson-status";
     case 7: // Francisco "JonJon" — El Roi
