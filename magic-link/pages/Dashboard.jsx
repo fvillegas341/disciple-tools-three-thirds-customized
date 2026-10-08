@@ -15,7 +15,7 @@ import { getTeamStatusLink } from "../src/helpers";
  */
 const Dashboard = () => {
     const { user, magicLink, translations } = useContext(AppContext)
-    const teamStatusLink = getTeamStatusLink(user.ID)
+    const teamStatusLink = getTeamStatusLink(Number(magicLink.parts.post_id))
     const isExternal = teamStatusLink && teamStatusLink.startsWith("http")
 
     return (<ApplicationLayout title={translations.title}>

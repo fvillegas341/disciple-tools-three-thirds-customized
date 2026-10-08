@@ -8785,7 +8785,7 @@ var Dashboard = function Dashboard() {
       magicLink = _useContext.magicLink,
       translations = _useContext.translations;
 
-  var teamStatusLink = (0,_src_helpers__WEBPACK_IMPORTED_MODULE_7__.getTeamStatusLink)(user.ID);
+  var teamStatusLink = (0,_src_helpers__WEBPACK_IMPORTED_MODULE_7__.getTeamStatusLink)(Number(magicLink.parts.post_id));
   var isExternal = teamStatusLink && teamStatusLink.startsWith("http");
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_layouts_ApplicationLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: translations.title,
