@@ -129,11 +129,42 @@ class DT_33_Magic_App extends DT_33_Magic_Link {
      * Login without setting the auth cookie
      */
     private function login_for_request( WP_REST_Request $request ) {
-        $user_id = $request->get_param( 'parts' )['post_id'];
+        $parts = $request->get_param( 'parts' );
+        $user_id = (int) $parts['post_id'];
         $user = get_user_by( 'id', $user_id );
-        if ( $user ) {
-            wp_set_current_user( $user_id, $user->user_login );
+        if ( !$user ) {
+            return false;
         }
+        wp_set_current_user( $user_id, $user->user_login );
+        return true;
+    }
+
+    /**
+     * Make sure the magic link parts belong to THIS app and that the public key
+     * really is the one stored on the user we are about to act as.
+     * Without this, a valid magic key from any other DT magic link (e.g. a contact's
+     * link, where post_id is a contact post ID) could be replayed here to act as
+     * the WordPress user that happens to share that ID.
+     * @param WP_REST_Request $request
+     * @return bool
+     */
+    private function parts_belong_to_user( WP_REST_Request $request ) {
+        $parts = $request->get_param( 'parts' );
+        if ( !is_array( $parts ) || empty( $parts['post_id'] ) || empty( $parts['public_key'] ) ) {
+            return false;
+        }
+        if ( isset( $parts['meta_key'] ) && $parts['meta_key'] !== self::META_KEY ) {
+            return false;
+        }
+        if ( isset( $parts['root'] ) && $parts['root'] !== $this->root ) {
+            return false;
+        }
+        if ( isset( $parts['type'] ) && $parts['type'] !== $this->type ) {
+            return false;
+        }
+        $stored_key = get_user_option( self::META_KEY, (int) $parts['post_id'] );
+        return is_string( $stored_key ) && $stored_key !== ''
+            && hash_equals( $stored_key, (string) $parts['public_key'] );
     }
 
     /**
@@ -142,11 +173,13 @@ class DT_33_Magic_App extends DT_33_Magic_Link {
      * @return bool
      */
     public function validate_request( WP_REST_Request $request ) {
-        $verified = $this->validate_endpoint( $request );
-        if ( $verified ) {
-            $this->login_for_request( $request );
+        if ( !$this->validate_endpoint( $request ) ) {
+            return false;
         }
-        return $verified;
+        if ( !$this->parts_belong_to_user( $request ) ) {
+            return false;
+        }
+        return $this->login_for_request( $request );
     }
 }
 

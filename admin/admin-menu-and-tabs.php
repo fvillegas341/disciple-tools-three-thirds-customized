@@ -44,7 +44,7 @@ class Disciple_Tools_Three_Thirds_Settings_Menu {
         add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 
         $nonce = isset( $_POST['_wpnonce'] ) ? sanitize_key( $_POST['_wpnonce'] ) : null;
-        $verify_nonce = $nonce && wp_verify_nonce( $nonce, 'dt33_settings' );
+        $verify_nonce = $nonce && wp_verify_nonce( $nonce, 'dt33_settings' ) && current_user_can( 'manage_dt' );
 
         if ( $verify_nonce ) {
             // Change Custom Logo URL

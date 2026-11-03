@@ -46,8 +46,8 @@ class DT_33_App_Controller
         $sort = $request->has_param('sort') ? $request->get_param('sort') : '-date';
         $initial_posts_per_page = 5;
         $posts_per_page = $request->has_param('paged') ? 25 : $initial_posts_per_page; //Set the default depending if we are already paging
-        $posts_per_page = $request->has_param('per_page') ? $request->has_param('per_page') : $posts_per_page;
-        $paged = $request->has_param('paged') ? $request->get_param('paged') : 0;
+        $posts_per_page = $request->has_param('per_page') ? min(100, max(1, absint($request->get_param('per_page')))) : $posts_per_page;
+        $paged = $request->has_param('paged') ? absint($request->get_param('paged')) : 0;
         $search = $request->has_param('q') ? $request->get_param('q') : null;
         $filter = $request->has_param('filter') ? $request->get_param('filter') : null;
 
@@ -102,7 +102,7 @@ class DT_33_App_Controller
     {
         $meeting = $this->meetings->find($request->get_param('meeting_id'));
         if (!$meeting) {
-            new WP_Error('no_posts', 'Meeting not found.', ['status' => 404]);
+            return new WP_Error('no_posts', 'Meeting not found.', ['status' => 404]);
         }
 
         $previous_meeting = $this->meetings->previous($meeting);

@@ -278,8 +278,11 @@ if (!function_exists("dt_hook_ajax_notice_handler")) {
     function dt_hook_ajax_notice_handler()
     {
         check_ajax_referer('wp_rest_dismiss', 'security');
+        if (!current_user_can('manage_dt')) {
+            wp_die('', '', 403);
+        }
         if (isset($_POST["type"])) {
-            $type = sanitize_text_field(wp_unslash($_POST["type"]));
+            $type = sanitize_key(wp_unslash($_POST["type"]));
             update_option('dismissed-' . $type, true);
         }
     }

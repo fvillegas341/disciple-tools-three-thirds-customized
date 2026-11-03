@@ -148,10 +148,17 @@ class DT_33_Meetings_Repository
     public function find($id)
     {
         $post = DT_Posts::get_post(DT_33_Meeting_Type::POST_TYPE, (int) $id, true);
-        if ($post['three_thirds_previous_meetings']) {
-            $post['three_thirds_previous_meetings'] = array_map(function ($previous) {
+        if (is_wp_error($post) || !$post) {
+            return null;
+        }
+        if (!empty($post['three_thirds_previous_meetings'])) {
+            $previous_meetings = array_map(function ($previous) {
                 return DT_Posts::get_post(DT_33_Meeting_Type::POST_TYPE, (int) $previous['ID'], true);
             }, $post['three_thirds_previous_meetings']);
+            // Drop any previous meetings the user isn't allowed to see.
+            $post['three_thirds_previous_meetings'] = array_values(array_filter($previous_meetings, function ($previous) {
+                return $previous && !is_wp_error($previous);
+            }));
         }
         return $post;
     }
@@ -241,7 +248,8 @@ class DT_33_Meetings_Repository
     public function save($id, $fields)
     {
         $meeting = $this->find($id);
-        if (!$meeting['type'] || !$meeting['type']['key'] === DT_33_Meeting_Type::MEETING_TYPE) {
+        // Only allow editing 3/3rds meetings (the old check was always false due to operator precedence).
+        if (!$meeting || empty($meeting['type']['key']) || $meeting['type']['key'] !== DT_33_Meeting_Type::MEETING_TYPE) {
             return new WP_Error(500, 'Incorrect meeting type');
         }
         return DT_Posts::update_post(

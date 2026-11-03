@@ -35,7 +35,8 @@ class DT_33_Login_Controller
             //If the error links to lost password, inject the 3/3rds redirect
             $error = str_replace( '?action=lostpassword', '?action=lostpassword?&redirect_to=/3/3', $error );
             return [
-                'error' => $error
+                // Rendered as HTML on the front end, so strip anything but safe markup.
+                'error' => wp_kses_post( $error )
             ];
         }
 
@@ -54,18 +55,32 @@ class DT_33_Login_Controller
      * @return array|WP_Error
      */
     public function post_register( WP_REST_Request $request ) {
-        $user = wp_create_user( $request->get_param( 'username' ), $request->get_param( 'password' ), $request->get_param( 'email' ) );
+        // This endpoint is public. Respect the site's "Anyone can register" setting
+        // so strangers can't create accounts when registration is turned off.
+        if ( !get_option( 'users_can_register' ) ) {
+            return [
+                'error' => esc_html__( 'Registration is currently disabled.', 'disciple_tools' )
+            ];
+        }
+
+        $user = wp_create_user(
+            sanitize_user( (string) $request->get_param( 'username' ) ),
+            (string) $request->get_param( 'password' ),
+            sanitize_email( (string) $request->get_param( 'email' ) )
+        );
 
         if ( is_wp_error( $user ) ) {
             return [
-                'error' => $user->get_error_message()
+                'error' => wp_kses_post( $user->get_error_message() )
             ];
         }
 
         wp_set_current_user( $user );
 
-        if ( $request->has_param( 'groups' ) ) {
-            foreach ( $request->get_param( 'groups' ) as $group_title ) {
+        $groups = $request->get_param( 'groups' );
+        if ( is_array( $groups ) ) {
+            foreach ( array_slice( $groups, 0, 10 ) as $group_title ) {
+                $group_title = sanitize_text_field( (string) $group_title );
                 if ( $group_title ) {
                     $group = DT_33_Groups_Repository::instance()->create( [
                         'title' => $group_title,

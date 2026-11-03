@@ -74,7 +74,8 @@ class DT_33_Groups_Repository
 
     public function create($params)
     {
-        return DT_Posts::create_post('groups', $params, false, false);
+        // Check permissions so users can only create groups if their DT role allows it.
+        return DT_Posts::create_post('groups', $params, false, true);
     }
 
     /**
@@ -113,7 +114,8 @@ class DT_33_Groups_Repository
 
     public function members($group_id)
     {
-        $group = DT_Posts::get_post('groups', $group_id, true, false);
+        // Check permissions: otherwise any magic-link user could list the members of any group by ID.
+        $group = DT_Posts::get_post('groups', (int) $group_id, true, true);
 
         if (is_wp_error($group) || !$group) {
             return [];

@@ -82,7 +82,12 @@ abstract class DT_33_Magic_Link extends DT_Magic_Url_Base {
             'nonce'        => wp_create_nonce( 'wp_rest' ),
             'parts'        => $this->parts,
             'translations' => $this->translations->all(),
-            'user'         => wp_json_encode( wp_get_current_user() ),
+            // Only expose what the front end needs. Encoding the whole WP_User object
+            // leaked the password hash, email and activation key into the page source.
+            'user'         => wp_json_encode( [
+                'ID'           => get_current_user_id(),
+                'display_name' => wp_get_current_user()->display_name,
+            ] ),
             'logout_url'   => wp_logout_url( DT_33_Magic_Redirect::PATH ),
             'reset_url'    => wp_lostpassword_url( DT_33_Magic_Redirect::PATH ),
             'redirect_url' => DT_33_Magic_Redirect::PATH,
