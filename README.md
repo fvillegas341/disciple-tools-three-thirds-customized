@@ -9,8 +9,8 @@ Adds 3/3rds meeting management and facilitation to the Disciple.Tools [Meetings 
 - Adds a magic link app that meeting users can use to facilitate meetings.
 - Meeting leaders can login, register, edit, create and view meetings all from within the magic link.
 
-
 ## Usage
+
 - A new meetings link will appear in your Disciple.Tools menu bar.
 - Visit yourdiscipletools.com/3/3 to access the magic link application.
 
@@ -20,12 +20,14 @@ Adds 3/3rds meeting management and facilitation to the Disciple.Tools [Meetings 
 - The Disciple.Tools [Meetings Tracker plugin](https://disciple.tools/plugins/comments-tracker/).
 
 ## Installing
+
 - Install the [Meetings Tracker plugin](https://disciple.tools/plugins/comments-tracker/).
 - Download the [zip of the latest release](https://github.com/thecodezone/disciple-tools-three-thirds/releases/latest).
 - Install as a standard Disciple.Tools/Wordpress plugin in the system Admin/Plugins area.
 - Requires the user role of Administrator.
 
 ## Contribution
+
 Contributions welcome. You can report issues and bugs in the
 [Issues](https://github.com/TheCodeZone/disciple-tools-three-thirds/issues) section of the repo. You can present ideas
 in the [Discussions](https://github.com/TheCodeZone/disciple-tools-three-thirds/discussions) section of the repo. And
@@ -42,19 +44,20 @@ npm install && composer install && npm run foundation && npm run dev
 ### Getting Setup
 
 Install NPM and Composer Dependencies
+
 ```
 npm install && composer install
 ```
 
-
 Build front-end assets
+
 ```
 npm run foundation
-npm run dev
+npm run dev // updates the dist folder which you will need to run the plugin.
 ```
 
-
 ## Screenshots
+
 ![screenshot](https://raw.githubusercontent.com/thecodezone/disciple-tools-three-thirds/master/documentation/screenshots/login.png)
 ![screenshot](https://raw.githubusercontent.com/thecodezone/disciple-tools-three-thirds/master/documentation/screenshots/menu.png)
 ![screenshot](https://raw.githubusercontent.com/thecodezone/disciple-tools-three-thirds/master/documentation/screenshots/meetings.png)
